@@ -72,7 +72,7 @@
   </tr>
 </table></div></div>
     <div class="actions">
-      <button class="btn copy" onclick="copyFirma(this)">📋 Copiar firma</button>
+      <button class="btn copy" data-done="✅ ¡Copiada! Ahora pégala en tu correo" onclick="copyFirma(this)">📋 Copiar firma</button>
       <a class="btn ghost" href="../assets/fullsq_maria-serra.png" download>⬇ Descargar en PNG</a>
       <a class="btn ghost" href="./">← Ver todas</a>
     </div>
@@ -106,7 +106,7 @@ async function copyFirma(btn){
     s.removeAllRanges();
   }
   const t=btn.dataset.label||btn.textContent; btn.dataset.label=t;
-  btn.textContent='✅ ¡Copiada! Ahora pégala en tu correo';
+  btn.textContent=btn.dataset.done||'✅ ¡Copiada! Ahora pégala en tu correo';
   setTimeout(()=>btn.textContent=t,2200);
 }
 </script>
